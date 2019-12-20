@@ -1,0 +1,381 @@
+@import "fonts"
+@import "libs"
+@import "vars"
+
+*
+	-webkit-box-sizing: border-box
+	-moz-box-sizing: border-box
+	box-sizing: border-box
+	outline: none
+	&:before, &:after
+		-webkit-box-sizing: border-box
+		-moz-box-sizing: border-box
+		box-sizing: border-box
+
+*::-webkit-input-placeholder
+	color: #666
+	opacity: 1
+
+*:-moz-placeholder
+	color: #666
+	opacity: 1
+
+*::-moz-placeholder
+	color: #666
+	opacity: 1
+
+*:-ms-input-placeholder
+	color: #666
+	opacity: 1
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid
+	color: #666
+body input:required:valid,
+body textarea:required:valid
+	color: #666
+
+html, body
+	height: 100%
+
+body
+	position: relative
+	min-width: 320px
+	font-family: $default-font
+	overflow-x: hidden
+	background: white
+	padding: 25px 0 0
+	margin: 0
+
+::selection
+	background-color: $yellow
+	color: #fff
+
+h1, h2
+	font-weight: bold
+	line-height: 100%
+	margin: 0
+
+a
+	transition: 0.2s ease-in-out
+	&:hover
+		text-decoration: none
+		// border-bottom: 1px dashed $yellow
+
+.main_header
+	padding: 25px 0
+	font-size: 14px
+	a
+		display: inline-block
+		color: black
+		line-height: 100%
+
+.main_menu
+	padding-left: 20px
+
+.main_menu__item
+	padding: 12px 0
+	margin-right: 25px
+	&:last-child
+		margin-right: 0
+	&:after
+		content: ''
+		position: relative
+		display: block
+		width: 100%
+		height: 1px
+		background: transparent
+		top: 10px
+		transition: 0.2s ease-in-out
+	&:hover:after
+		top: 8px
+		background: $yellow
+
+
+.header__button-full
+	position: relative
+	padding: 12px 70px
+	border: 1px solid #F7B81D
+	border-radius: 100px
+	overflow: hidden
+	&:hover
+		background: $yellow
+	&:after
+		content: ''
+		position: absolute
+		background: white
+		opacity: 0.25
+		width: 50px
+		height: 155px
+		transform: rotate(35deg)
+		transition: all 1500ms cubic-bezier(0.19, 1, 0.22, 1)
+		top: -50px
+		left: -100px
+	&:hover:after
+		left: 120%
+		transition: all 1500ms cubic-bezier(0.19, 1, 0.22, 1)
+
+[data-text_align="right"]
+	text-align: right
+
+[data-text_align="center"]
+	text-align: center
+
+.g-container
+	width: 1200px
+	margin: 0 auto
+
+.slide__item
+	position: relative
+	border-radius: 10px
+	min-height: 300px
+	max-width: 1200px
+	margin: 0 auto
+	box-shadow: 0px 10px 20px rgba(247, 184, 29, 0.5)
+	color: black
+
+.slide__container
+	display: block
+	width: 100vw
+	padding: 15px 0 25px
+
+.slide__content
+	position: absolute
+	top: 50%
+	left: 70px
+	transform: translate(0, -50%)
+	max-width: 420px
+
+.slide__title
+	font-size: 32px
+	margin-bottom: 10px
+	line-height: 37px
+	font-weight: bold
+
+.slide__desc
+	font-size: 14px
+	line-height: 170%
+	margin-bottom: 20px
+
+.slide__link-block
+	font-size: 14px
+	font-weight: 500
+	color: black
+	&:after
+		content: ''
+		display: inline-block
+		background: url('/img/icons/arrow_right-50px.svg') 50% no-repeat
+		width: 50px
+		height: 8px
+		margin-left: 15px
+		transition: 0.2s ease-in-out
+	&:hover
+		color: black
+		&:after
+			margin-left: 25px
+
+.slide-link
+	transition: all 750ms cubic-bezier(0.19, 1, 0.22, 1)
+	&:hover
+		cursor: pointer
+		transform: translate(0, -5px)
+		transition: all 750ms cubic-bezier(0.19, 1, 0.22, 1)
+
+
+.default__title
+	font-size: 32px
+	font-weight: bold
+	line-height: 37px
+	margin-bottom: 20px
+
+p
+	margin: 0
+	font-size: 16px
+	line-height: 170%
+
+.catalog__item-block
+	display: block
+	border-radius: 10px
+	border: 1px solid rgba(0, 0, 0, 0.05)
+	text-align: center
+	padding: 30px 20px
+	span
+		display: inline-block
+		margin-top: 20px
+		color: black
+		&:after
+			content: ''
+			position: relative
+			display: block
+			width: 100%
+			height: 1px
+			background: transparent
+			top: 10px
+			transition: 0.2s ease-in-out
+		&:hover:after
+			top: 8px
+			background: $yellow
+	
+
+.catalog__products-desc_link
+	margin-top: 25px
+
+.default__button
+	display: inline-block
+	position: relative
+	padding: 12px 70px
+	border: 1px solid
+	border-radius: 5px
+	overflow: hidden
+	transition: all 750ms cubic-bezier(0.19, 1, 0.22, 1)
+	outline: none!important
+	&.yellow
+		background: $yellow
+		color: black
+		border: 1px solid $yellow
+		&:hover
+			border: 1px solid $yellow
+			background: transparent
+
+.inline-bottom > *
+	display: inline-block
+	vertical-align: bottom
+
+.calc__price > .container
+	position: relative
+
+.header__calc-block
+	position: absolute
+	max-width: 540px
+	font-size: 14px
+	background: #fff
+	border-radius: 10px
+	padding: 40px 45px
+	right: 0
+	top: -370px
+	box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.03)
+	transition: $transition
+	&:hover
+		top: -380px
+		&:before
+			width: calc(100% - 40px)
+			bottom: -16px
+			left: 20px
+		&:after
+			left: 30px
+			width: calc(100% - 60px)
+			bottom: -28px
+		&:before, &:after
+			height: 16px
+	&:before, &:after
+		content: ''
+		display: block
+		position: absolute
+		box-shadow: 0px 15px 50px rgba(0, 0, 0, 0.05)
+		height: 12px
+		border-radius: 0 0 20px 20px
+		transition: $transition
+	&:before
+		width: calc(100% - 20px)
+		background: #EBEBEB
+		left: 10px
+		bottom: -12px
+		z-index: -1
+	&:after
+		width: calc(100% - 40px)
+		background: #EFEFEF
+		opacity: 0.5
+		left: 20px
+		bottom: -24px
+		z-index: -2
+
+.header_calc-title
+	margin-bottom: 20px
+
+.header_calc-title-item
+	font-size: 24px
+	
+.header_calc-sub_title-item
+	margin-left: 20px
+	font-size: 14px
+	a
+		display: inline-block
+		color: black
+		border-bottom: 1px dashed $yellow
+		padding-bottom: 4px
+		line-height: 100%
+		&:hover
+			border-bottom: 1px solid $yellow
+
+.calc-form_item-block
+	margin-bottom: 15px
+	&:last-child
+		margin-bottom: 0
+	label
+		display: block
+		opacity: 0.5
+		line-height: 16px
+		margin-bottom: 10px
+
+.default__select
+	position: relative
+	cursor: pointer
+	width: 100%
+	border: 1px solid #E5E5E5 
+	padding: 15px 25px
+	border-radius: 4px
+	// &:before
+	// 	content: ''
+	// 	display: block
+	// 	position: absolute
+	// 	background: white
+	// 	width: 10px
+	// 	height: 100%
+	// 	right: 0
+	&:focus, &:hover
+		border: 1px solid $yellow 
+		transition: $transition
+
+.default__input
+	width: 100%
+	border: 1px solid #E5E5E5
+	border-radius: 4px
+	padding: 15px 25px
+	&:hover
+		border: 1px solid $yellow
+
+
+.calc-form__footer-title
+	opacity: 0.5
+	margin-bottom: 10px
+	line-height: 100%
+
+.calc-form__footer-price
+	font-size: 24px
+	font-weight: bold
+	line-height: 100%
+
+.slick-dots
+	li
+		display: inline-block
+		font-size: 0
+		margin-right: 20px
+	button
+		background: black
+		border: 0
+		height: 8px
+		width: 8px
+		overflow: hidden
+		outline: none
+		padding: 0
+		border-radius: 100px
+		opacity: 0.25
+	.slick-active button
+		opacity: 0.75
+	li:last-child
+		margin-right: 0
+
+.catalog__products
+	margin-top: 70px
+
+@import "media" // Всегда в конце
