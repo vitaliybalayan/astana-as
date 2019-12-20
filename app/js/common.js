@@ -15,51 +15,65 @@ $(function() {
 	var vue = new Vue({
 		el: '#calculator_price',
 		data: {
-			price_brick: '1000',
-			weight_value: '1',
+			price_brick: '61',
 			result: '0',
 			quantity: '0',
 			result: '0',
 			bricks: [
-				{ text: 'Полуторный керамический', value: '1000' },
-				{ text: 'Одинарный керамический', value: '2000' }
+				{ text: 'Полуторный керамический', value: '61' },
+				{ text: 'Одинарный керамический', value: '60' }
 			],
-			weights: [
-				{ text: 'Киллограм', value: '1' },
-				{ text: 'Тонны', value: '1000' }
-			]
 		},
 		methods: {
-			input: function (quantity) {
-
-				var quantity = quantity;
-				this.finish();
-
-			},
-
 			brick: function (value) {
 
 				var price_brick = value;
-				this.finish();
+				this.calc();
 
 			},
 
-			weight: function (value) {
+			input: function (value) {
 
-				var weight_value = value;
-				this.finish();
-			
+				var quantity = value;
+				this.calc();
+
 			},
 
-			finish: function () {
+			calc: function () {
+
 				var value = this.quantity;
 				var price = this.price_brick;
-				var weight = this.weight_value;
 
-				var finish = value * price * weight;
+				var total_price = value * price;
 
-				this.result = finish.toLocaleString();
+				if (total_price < 1000000) {
+					
+					this.finish(total_price);
+
+				} if (total_price >= 1000000) {
+					
+					var new_price = price - 5;
+					var new_total_price = value * new_price;
+					
+					console.log(new_price);
+					this.finish(new_total_price);
+
+				} if (total_price >= 1500000) {
+
+					var new_price = price - 7;
+					console.log(new_price);
+					var new_total_price = value * new_price;
+					this.finish(new_total_price);
+				
+				}
+
+			},
+
+			finish: function (value) {
+				this.result = value.toLocaleString();
 			}
+
+
 		}
 	});
 

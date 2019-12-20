@@ -186,7 +186,7 @@ a
 	font-size: 32px
 	font-weight: bold
 	line-height: 37px
-	margin-bottom: 20px
+	margin-bottom: 30px
 
 p
 	margin: 0
@@ -199,6 +199,11 @@ p
 	border: 1px solid rgba(0, 0, 0, 0.05)
 	text-align: center
 	padding: 30px 20px
+	background: white
+	&:hover
+		span::after
+			top: 5px
+			background: $yellow
 	span
 		display: inline-block
 		margin-top: 20px
@@ -212,10 +217,6 @@ p
 			background: transparent
 			top: 10px
 			transition: 0.2s ease-in-out
-		&:hover:after
-			top: 8px
-			background: $yellow
-	
 
 .catalog__products-desc_link
 	margin-top: 25px
@@ -377,6 +378,96 @@ p
 		margin-right: 0
 
 .catalog__products
-	margin-top: 100px
+	margin-top: 50px
+
+.default__section
+	padding: 50px 0
+
+.default__block
+	border: 1px solid rgba(0, 0, 0, 0.05)
+	border-radius: 5px
+	padding: 30px
+	transition: $transition
+	&:hover
+		transform: translate(0, -5px)
+		box-shadow: 0 10px 20px rgba(247,184,29,.05)
+		background: white
+		border: 1px solid rgba($yellow, 0.75)
+
+.block__title
+	font-size: 18px
+	font-weight: bold
+	line-height: 21px
+	margin-bottom: 10px
+
+.block__subtitle
+	font-size: 14px
+	line-height: 19px
+	margin-bottom: 10px
+
+.block__image
+	margin: 20px 0 30px
+
+.main_slider-container:after
+	content: ''
+	position: absolute
+	display: inline-block
+	background: url('/img/icons/logo_black.svg') 50% no-repeat
+	width: 526px
+	height: 668px
+	background-size: 100%
+	top: 20%
+	right: 5%
+	animation: float 5s ease-in-out infinite
+	z-index: -9999
+	opacity: 0.01
+
+@keyframes float
+	0%
+		transform: translatey(0px)
+	25%
+		transform: translatey(25px)
+	50%
+		transform: translatey(-50px)
+	75%
+		transform: translatey(25px)
+	100%
+		transform: translatey(0px)
+
+p, .default__list
+	font-size: 14px
+	line-height: 170%
+
+p
+	margin: 0
+
+.default__list
+	list-style: none
+	list-style-image: url('/img/icons/tick_yellow.svg')
+	padding: 0
+	margin: 0
+	padding: 20px 30px
+	margin: 5px 0
+	li
+		margin-bottom: 10px
+		padding-left: 10px
+		&:last-child
+			margin-bottom: 0
+
+.about__right-img
+	animation: float 5s ease-in-out infinite
+	&:after
+		content: ''
+		position: absolute
+		display: block
+		background: url('/img/backgrounds/54wfd_fumo_cubo 1.png') 50% no-repeat
+		width: 562px
+		height: 649px
+		top: -120px
+		right: -200px
+		z-index: -1
+		opacity: 0.1
+		filter: blur(25px)
+
 
 @import "media" // Всегда в конце

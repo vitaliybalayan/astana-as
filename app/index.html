@@ -116,12 +116,6 @@
 									<label for="quantity_brick">Количество</label>
 									<input type="number" id="quantity_brick" name="quantity_brick" data-text_align="center" class="default__input" v-model="quantity" placeholder="0" v-on:keyup="input(quantity)" @change="input(quantity)">
 								</div>
-								<div class="col">
-									<label for="weight">Вес</label>
-									<select name="weight" id="weight" class="default__select" v-model="weight_value" @change="weight(weight_value)">
-										<option v-bind:value="weight.value" v-for="weight in weights">{{weight.text}}</option>
-									</select>
-								</div>
 							</div>
 						</div>
 
@@ -144,7 +138,7 @@
 		</div>
 	</section>
 
-	<section class="catalog__products" id="#catalog">
+	<section class="default__section catalog__products" id="#catalog">
 		<div class="container">
 			<div class="row">
 				<div class="col">
@@ -159,21 +153,175 @@
 				<div class="col">
 					<div class="row">
 						<div class="col">
-							<a href="#" class="catalog__item-block">
+							<a href="#" class="default__block catalog__item-block">
 								<img src="/img/example_1.jpg" alt="Кирпич 1">
 								<span>Кирпич обычный</span>
 							</a>
 						</div>
 						<div class="col">
-							<a href="#" class="catalog__item-block">
+							<a href="#" class="default__block catalog__item-block">
 								<img src="/img/example_1.jpg" alt="Кирпич 1">
-								<span>Кирпич обычный</span>
+								<span>Кирпич необычный</span>
 							</a>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+	</section>
+
+	<section class="default__section advan__section" id="advantage">
+		<div class="container">
+			<h2 class="default__title">Почему клиенты выбирают нас</h2>
+			<div class="row">
+
+				<div class="col">
+					<div class="default__block" data-text_align="center">
+						<div class="block__image">
+							<img src="/img/icons/sports-medal_1f3c5.png" alt="Безупречное качество">
+						</div>
+						<div class="block__title">Безупречное качество</div>
+						<div class="block__subtitle">Мы отвечаем за каждый кирпич</div>
+					</div>
+				</div>
+
+				<div class="col">
+					<div class="default__block" data-text_align="center">
+						<div class="block__image">
+							<img src="/img/icons/1f680.png" alt="Экспресс-доставка по Казахстану">
+						</div>
+						<div class="block__title">Экспресс-доставка по Казахстану</div>
+						<div class="block__subtitle">Мы не заставим вас долго ждать</div>
+					</div>
+				</div>
+
+				<div class="col">
+					<div class="default__block" data-text_align="center">
+						<div class="block__image">
+							<img src="/img/icons/bookmark_1f516.png" alt="Доступные цены">
+						</div>
+						<div class="block__title">Доступные цены</div>
+						<div class="block__subtitle">Гибкая система скидок</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</section>
+
+	<section class="about" id="about">
+		<div class="container">
+			
+			<h2 class="default__title">О нас</h2>
+			<div class="row">
+				<div class="col">
+					<p>ТОО “Astana-As” был создан в 2012 году. На заводе применяется современная микропроцессорная техника и компьютеризированная система. Весь процесс автоматизирован. Более 7 лет на рынке Казахстана мы производим кирпич цвета “коричневый”, “абрикос” и “соломенный”. Наши технологические характеристики соответствуют международным стандартам:</p>
+					<ul class="default__list">
+						<li>Высокая морозостойкость (более 50-ти циклов)</li>
+						<li>Низкие показатели теплопроводности (0,35-0,50 Вт/мС)</li>
+						<li>Водопоглащение (14%)</li>
+						<li>Правильная геометрия</li>
+					</ul>
+					<p>Стены, построенные из нашего кирпича обеспечивают отличный микроклимат в доме. Зимой в домах от ТОО “Астана-Ас” тепло, а летом, наоборот, прохладно. Плюс ко всему - кирпич от завода ТОО “Астана-Ас” обеспечивают хорошую звукоизоляцию и низкую влажность. Внешний вид нашего кирпича позволяет клиентам не тратить лишние деньги на дополнительную отделку дома. Кирпич от ТОО “Astana-AS” имеет приятный оттенок и точные геометрические формы.</p>
+				</div>
+				<div class="col" data-text_align="right">
+					<div class="about__right-img">
+						<img src="/img/backgrounds/54wfd_fumo_cubo 1.png" alt="Кирпичная стена">
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</section>
+
+	<section class="calc_brick">
+		<div class="container">
+			<div class="yellow__section">
+				
+				<h2 class="default__title">О нас</h2>
+				<div class="calc-form_item-block">
+					<label>Выберите вид</label>
+					<div class="row">
+						<div class="col">
+							<input type="checkbox" value="Облицовка дома (в ½ кирпича)">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="section__contacts">
+		
+		<div class="container">
+			
+			<h2 class="default__title">Наши контакты</h2>
+			<div class="row">
+				<div class="col">
+					<h3>ТОО “АСТАНА-АС”</h3>
+					<div class="h-subtitle">Обрабатывающая промышленность</div>
+
+					<div class="social__buttons">
+						<a href="#" class="social__button-item item__vk">astana-as</a>
+						<a href="#" class="social__button-item item__inst">astana-as</a>
+					</div>
+
+					<div class="custom__table">
+						<div class="row">
+							<div class="col-auto">Телефон:</div>
+							<div class="col-auto"><a href="tel:+77752253344">+7 (775) 225-33-44</a></div>
+						</div>
+						<div class="row">
+							<div class="col-auto">Городской телефон:</div>
+							<div class="col-auto"><a href="tel:+77752253344">+7 (775) 225-33-44</a></div>
+						</div>
+						<div class="row">
+							<div class="col-auto">Email:</div>
+							<div class="col-auto"><a href="mailto:info@astana-as.kz">info@astana-as.kz</a></div>
+						</div>
+						<div class="row">
+							<div class="col-auto">Адрес:</div>
+							<div class="col-auto">Акмолинская область, Целиноградский район,<br>А.Кабанбай батыра, ул. нет улицы, д.</div>
+						</div>
+					</div>
+				</div>
+				<div class="col">
+					<h3>Реквизиты</h3>
+					<div class="margin-top_30px">
+						<div class="row">
+							<div class="col-auto">Полное название компании:</div>
+							<div class="col-auto">ТОО “АСТАНА-АС”</div>
+						</div>
+						<div class="row">
+							<div class="col-auto">БИН:</div>
+							<div class="col-auto">110640004551</div>
+						</div>
+						<div class="row">
+							<div class="col-auto">РНН:</div>
+							<div class="col-auto">430100280505</div>
+						</div>
+						<div class="row">
+							<div class="col-auto">№ Счета:</div>
+							<div class="col-auto">KZ386010231000320133</div>
+						</div>
+						<div class="row">
+							<div class="col-auto">Банк:</div>
+							<div class="col-auto">АО "Народный банк Казахстана"</div>
+						</div>
+						<div class="row">
+							<div class="col-auto">БИК:</div>
+							<div class="col-auto">HSBKKZKZ</div>
+						</div>
+						<div class="row">
+							<div class="col-auto">Юр. адрес:</div>
+							<div class="col-auto">Акмолинская область, Целиноградский район,<br>А.Кабанбай батыра, ул. нет улицы, д.</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
 	</section>
 
 	<script src="js/scripts.min.js"></script>
