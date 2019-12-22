@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+	<meta charset="utf-8">
+
+	<title>ТОО "АСТАНА-АС" — Производство кирпича</title>
+	<meta name="description" content="">
+
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap&subset=cyrillic" rel="stylesheet">
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<meta property="og:image" content="path/to/image.jpg">
+
+	<link rel="shortcut icon" href="img/favicons/favicon-32x32.png" type="image/png">
+	<link rel="apple-touch-icon" href="img/favicons/apple-touch-icon-64x64.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="img/favicons/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="img/favicons/apple-touch-icon-114x114.png">
+
+	<!-- Chrome, Firefox OS and Opera -->
+	<meta name="theme-color" content="#F7B81D">
+	<!-- Windows Phone -->
+	<meta name="msapplication-navbutton-color" content="#F7B81D">
+	<!-- iOS Safari -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="#F7B81D">
+
+	<link rel="stylesheet" href="css/main.min.css">
+
+</head>
+
+<body>
+
+	<header class="main_header" id="main__header">
+		<div class="container">
+			
+			<div class="row">
+				<div class="col-md-auto">
+					<div class="logotype">
+						<a href="#"><img src="/img/logo.svg" alt="Астана АС"></a>
+					</div>
+				</div>
+				<div class="col-md-auto">
+					<nav class="main_menu">
+						<a href="#catalog" class="main_menu__item">Каталог товаров</a>
+						<a href="#advantage" class="main_menu__item">Преимущества</a>
+						<a href="#about" class="main_menu__item">О нас</a>
+						<a href="#calc_brick" class="main_menu__item">Калькулятор кирпича</a>
+						<a href="#contacts" class="main_menu__item">Контакты</a>
+					</nav>
+				</div>
+				<div class="col" data-text_align="right">
+					<a href="javascript:void(0)" onclick="popupShow('popup__callback');" class="header__button-full">Оставить заявку</a>
+				</div>
+			</div>
+
+		</div>
+	</header>
+
+	<section class="main_slider-container">
+		<div class="main__slider">
+			<a href="#" class="slide__container slide-link">
+				<div class="slide__item" style="background: #F7B81D; background-size: cover;">
+					<div class="slide__content">
+						<div class="slide__title">Фундаментальное качество</div>
+						<div class="slide__desc">Завод по производству керамических блоков и кирпичей в Казахстане</div>
+						<div class="slide__link">
+							<span onclick="location.href = '#'" class="slide__link-block">Подробнее</span>
+						</div>
+					</div>
+				</div>
+			</a>
+		</div>
+	</section>
+
+	<section class="calc__price">
+		<div class="container">
+			<div class="header__calc-block" id="calculator_price">
+				<div class="header_calc-container">
+					
+					<div class="header_calc-title inline-bottom">
+						<h2 class="header_calc-title-item">Калькулятор цены</h2>
+						<div class="header_calc-sub_title-item"><a href="#">Калькулятор кирпича</a></div>
+					</div>
+
+					<div class="header_calc-content">
+
+						<div class="calc-form_item-block">
+
+							<label for="type_brick">Тип</label>
+							<select name="type_brick" id="type_brick" class="default__select" v-model="price_brick" @change="brick(price_brick)">
+								<option v-bind:value="brick.value" v-for="brick in bricks">{{brick.text}}</option>
+							</select>
+
+						</div>
+
+						<div class="calc-form_item-block">
+							<div class="row">
+								<div class="col">
+									<label for="quantity_brick">Количество</label>
+									<input type="number" id="quantity_brick" name="quantity_brick" data-text_align="center" class="default__input" v-model="quantity" placeholder="0" v-on:keyup="input(quantity)" @change="input(quantity)">
+								</div>
+							</div>
+						</div>
+
+						<div class="calc-form__footer">
+							<div class="row">
+								<div class="col">
+									<div class="calc-form__footer-title">Итого:</div>
+									<div class="calc-form__footer-price"><span id="total_price_with_brick">{{result}}</span> тг.</div>
+								</div>
+								<div class="col">
+									<button type="submit" class="default__button yellow">Заказать</button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+			
+		</div>
+	</section>
+
+	<section class="default__section catalog__products" id="catalog">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<div class="catalog__products-desc">
+						<h2 class="default__title">Каталог товаров</h2>
+						<p>Astana-As является производителем керамического кирпича для облицовки и строительства зданий и сооружений. Наша продукция изготовлена с использованием современных технологий и отвечает международным стандартам качества</p>
+						<div class="catalog__products-desc_link">
+							<a href="javascript:void(0)" onclick="popupShow('popup__callback');" class="default__button yellow">Оставить заявку</a>
+						</div>
+					</div>
+				</div>
+				<div class="col">
+					<div class="row">
+						<div class="col">
+							<a href="javascript:void(0)" onclick="popupShow('popup__callback');" class="default__block catalog__item-block">
+								<img src="/img/product/2.jpg" alt="Полуторный кирпич">
+								<span>Полуторный кирпич</span>
+							</a>
+						</div>
+						<div class="col">
+							<a href="javascript:void(0)" onclick="popupShow('popup__callback');" class="default__block catalog__item-block">
+								<img src="/img/product/example_1.jpg" alt="Кирпич необычный">
+								<span>Кирпич необычный</span>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="default__section advan__section" id="advantage">
+		<div class="container">
+			<h2 class="default__title">Почему клиенты выбирают нас</h2>
+			<div class="row">
+
+				<div class="col">
+					<div class="default__block" data-text_align="center">
+						<div class="block__image">
+							<img src="/img/icons/sports-medal_1f3c5.png" alt="Безупречное качество">
+						</div>
+						<div class="block__title">Безупречное качество</div>
+						<div class="block__subtitle">Мы отвечаем за каждый кирпич</div>
+					</div>
+				</div>
+
+				<div class="col">
+					<div class="default__block" data-text_align="center">
+						<div class="block__image">
+							<img src="/img/icons/1f680.png" alt="Экспресс-доставка по Казахстану">
+						</div>
+						<div class="block__title">Экспресс-доставка по Казахстану</div>
+						<div class="block__subtitle">Мы не заставим вас долго ждать</div>
+					</div>
+				</div>
+
+				<div class="col">
+					<div class="default__block" data-text_align="center">
+						<div class="block__image">
+							<img src="/img/icons/bookmark_1f516.png" alt="Доступные цены">
+						</div>
+						<div class="block__title">Доступные цены</div>
+						<div class="block__subtitle">Гибкая система скидок</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</section>
+
+	<section class="about" id="about">
+		<div class="container">
+			
+			<h2 class="default__title">О нас</h2>
+			<div class="row">
+				<div class="col">
+					<p>ТОО “Astana-As” был создан в 2012 году. На заводе применяется современная микропроцессорная техника и компьютеризированная система. Весь процесс автоматизирован. Более 7 лет на рынке Казахстана мы производим кирпич цвета “коричневый”, “абрикос” и “соломенный”. Наши технологические характеристики соответствуют международным стандартам:</p>
+					<ul class="default__list">
+						<li>Высокая морозостойкость (более 50-ти циклов)</li>
+						<li>Низкие показатели теплопроводности (0,35-0,50 Вт/мС)</li>
+						<li>Водопоглащение (14%)</li>
+						<li>Правильная геометрия</li>
+					</ul>
+					<p>Стены, построенные из нашего кирпича обеспечивают отличный микроклимат в доме. Зимой в домах от ТОО “Астана-Ас” тепло, а летом, наоборот, прохладно. Плюс ко всему - кирпич от завода ТОО “Астана-Ас” обеспечивают хорошую звукоизоляцию и низкую влажность. Внешний вид нашего кирпича позволяет клиентам не тратить лишние деньги на дополнительную отделку дома. Кирпич от ТОО “Astana-AS” имеет приятный оттенок и точные геометрические формы.</p>
+				</div>
+				<div class="col" data-text_align="right">
+					<div class="about__right-img">
+						<img src="/img/backgrounds/54wfd_fumo_cubo 1.png" alt="Кирпичная стена">
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</section>
+
+	<section class="calc_brick" id="calc_brick">
+		<div class="container">
+			<div class="yellow__section">
+				
+				<h2 class="default__title">Калькулятор кирпича</h2>
+
+				<div class="calc_brick-form_item-block">
+					<label class="title__label">Выберите вид</label>
+					<div class="row">
+						<div class="col">
+							<input type="checkbox" class="default__checkbox" id="house_building" value="Облицовка дома (в ½ кирпича)">
+							<label for="house_building" class="input__label">Облицовка дома (в ½ кирпича)</label>
+						</div>
+						<div class="col">
+							<input type="checkbox" class="default__checkbox" id="brick_building" value="Облицовка дома (в ½ кирпича)">
+							<label for="brick_building" class="input__label">Строительство (в 2,5 кирпича: в 2 кирпича — забутовка и в ½ кирпича — облицовка)</label>
+						</div>
+					</div>
+				</div>
+
+				<div class="calc_brick-form_item-block">
+					<label class="title__label">Размеры строение</label>
+					<div class="row">
+						<div class="col">
+							<input type="text" id="length-metr" name="length-metr" class="default__input" placeholder="Длина, м">
+						</div>
+						<div class="col">
+							<input type="text" id="width-metr" name="width-metr" class="default__input" placeholder="Ширина, м">
+						</div>
+					</div>
+					<div class="row">
+						<div class="col">
+							<input type="text" id="height-metr" name="height-metr" class="default__input" placeholder="Высота, м">
+						</div>
+						<div class="col">
+							<input type="text" id="more-metr" name="more-metr" class="default__input" placeholder="Двери и оконные проемы, м">
+						</div>
+					</div>
+				</div>
+
+				<div class="calc_brick-form_item-block">
+					<label class="title__label">Размер кирпича</label>
+					<div class="row">
+						<div class="col">
+							<input type="checkbox" class="default__checkbox" id="one-brick">
+							<label for="one-brick" class="input__label">Одинарный кирпич</label>
+						</div>
+						<div class="col">
+							<input type="checkbox" class="default__checkbox" id="half-brick">
+							<label for="half-brick" class="input__label">Утолщенный кирпич</label>
+						</div>
+					</div>
+				</div>
+
+				<div class="calc_brick-form_item-block">
+					<div class="c_b-f_i-block__buttons">
+						<a href="#" class="default__button black">Рассчитать</a>
+						<a href="#" class="default__button ghost-black">Узнать стоимость</a>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</section>
+
+	<section class="section__contacts" id="contacts">
+		
+		<div class="container">
+			
+			<h2 class="default__title">Наши контакты</h2>
+			<div class="row">
+				<div class="col">
+					<h3>ТОО “АСТАНА-АС”</h3>
+					<div class="h-subtitle">Обрабатывающая промышленность</div>
+
+					<div class="social__buttons">
+						<a href="#" class="social__button-item item__vk">astana-as</a>
+						<a href="#" class="social__button-item item__inst">astana-as</a>
+					</div>
+
+					<div class="custom__table">
+						<div class="row">
+							<div class="col-auto">Телефон:</div>
+							<div class="col-auto"><a href="tel:+77752253344">+7 (775) 225-33-44</a></div>
+						</div>
+						<div class="row">
+							<div class="col-auto">Городской телефон:</div>
+							<div class="col-auto"><a href="tel:+77752253344">+7 (775) 225-33-44</a></div>
+						</div>
+						<div class="row">
+							<div class="col-auto">Email:</div>
+							<div class="col-auto"><a href="mailto:info@astana-as.kz">info@astana-as.kz</a></div>
+						</div>
+						<div class="row">
+							<div class="col-auto">Адрес:</div>
+							<div class="col-auto">Акмолинская область, Целиноградский район,<br>А.Кабанбай батыра, ул. нет улицы, д.</div>
+						</div>
+					</div>
+				</div>
+				<div class="col">
+					<h3>Реквизиты</h3>
+					<div class="margin-top_30px custom__table">
+						<div class="row">
+							<div class="col-auto">Полное название компании:</div>
+							<div class="col-auto">ТОО “АСТАНА-АС”</div>
+						</div>
+						<div class="row">
+							<div class="col-auto">БИН:</div>
+							<div class="col-auto">110640004551</div>
+						</div>
+						<div class="row">
+							<div class="col-auto">РНН:</div>
+							<div class="col-auto">430100280505</div>
+						</div>
+						<div class="row">
+							<div class="col-auto">№ Счета:</div>
+							<div class="col-auto">KZ386010231000320133</div>
+						</div>
+						<div class="row">
+							<div class="col-auto">Банк:</div>
+							<div class="col-auto">АО "Народный банк Казахстана"</div>
+						</div>
+						<div class="row">
+							<div class="col-auto">БИК:</div>
+							<div class="col-auto">HSBKKZKZ</div>
+						</div>
+						<div class="row">
+							<div class="col-auto">Юр. адрес:</div>
+							<div class="col-auto">Акмолинская область, Целиноградский район,<br>А.Кабанбай батыра, ул. нет улицы, д.</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+	</section>
+
+
+	<section class="maps__section">
+		<div class="container">
+			
+			<div class="map_block">
+				<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Acdcf8437e30c989f66a433ac2667bc1a55bf9ccc7f65db5e1b444dd256a02dc8&amp;width=100%25&amp;height=300&amp;lang=ru_RU&amp;scroll=true"></script>
+			</div>
+
+		</div>
+	</section>
+
+	<footer class="section__footer">
+		
+		<div class="container">
+			
+			<div class="footer__header">
+				<div class="row">
+					<div class="col inline-middle">
+						<a href="#"><img src="/img/logo_white.svg" alt="Astana-As"></a>
+						<div class="copyrite">© Все права защищены</div>
+					</div>
+					<div class="col" data-text_align="right">
+						<div class="footer__contacts inline-middle">
+							<div class="footer__contacts-phone inline-middle">
+								<a href="tel:+77752253344">+7 (775) 225-33-44</a>
+								<a href="tel:+77752253344">+7 (775) 225-33-44</a>
+							</div>
+							<div class="footer__contacts-social inline-middle">
+								<a href="#" class="footer__social-icons i-vk"></a>
+								<a href="#" class="footer__social-icons i-insta"></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="footer__content">
+				<div class="footer__content-block" data-text_align="right">
+					<span>Сделан с любовью компанией <a href="https://parallax.pro/" class="link__yellow">Parallax.pro</a></span>
+				</div>
+			</div>
+
+		</div>
+
+	</footer>
+
+	<div class="callback__popup">
+		
+		<a href="javascript:void(0)" onclick="popupsHide()" class="background__popup-overflow" style="display: none;"></a>
+
+		<div class="popup__block">
+							
+			<div class="popup__item" id="popup__callback" style="display: none;">
+				
+				<div class="popup__item-title">
+					<h3>Оставить заявку</h3>
+					<div class="popup__close-button">
+						<a href="javascript:void(0)" onclick="popupsHide()" class="close__button" data-icon_size="middle"></a>
+					</div>
+				</div>
+
+				<div class="popup__item-content">
+					
+					<form action="mail.php" method="POST" class="callback__form">
+						
+						<div class="callback__select-buttons inline-middle">
+							<input type="radio" class="default__radio" name="callback__type" value="WhatsApp" id="wathsapp__radio" checked>
+							<label for="wathsapp__radio" class="callback__button callback__i-whatsapp"></label>
+							<input type="radio" class="default__radio" name="callback__type" value="Telegram" id="telegram__radio">
+							<label for="telegram__radio" class="callback__button callback__i-telegram"></label>
+							<input type="radio" class="default__radio" name="callback__type" value="Email" id="email__radio">
+							<label for="email__radio" class="callback__button callback__i-email"></label>
+						</div>
+
+						<div class="callback__inputs-block">
+							<input type="text" name="value" class="default__input" placeholder="Введиие данные">
+						</div>
+
+						<div class="callback__inputs-block">
+							<button type="submit" class="default__button yellow" data-width="full">Отправить</button>
+						</div>
+
+						<div class="callback__form-footer">
+							<span class="notify">Отправляя данную форму, вы подтверждаете свое согласие на обработку персональных данных</span>
+						</div>
+
+					</form>
+
+				</div>
+
+			</div>
+			
+		</div>
+
+	</div>
+
+	<script src="js/scripts.min.js"></script>
+
+</body>
+</html>
