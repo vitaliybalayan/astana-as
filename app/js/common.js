@@ -77,4 +77,38 @@ $(function() {
 		}
 	});
 
+	$("document").ready(function($){
+		var nav = $('#main__header');
+
+		$(window).scroll(function () {
+			if ($(this).scrollTop() > 25) {
+				nav.addClass("fixed_header");
+			} else {
+				nav.removeClass("fixed_header");
+			}
+		});
+
+	});
+
+	$("a.main_menu__item").click(function() {
+      $("html, body").animate({
+         scrollTop: $($(this).attr("href")).offset().top - 150 + "px"
+      }, {
+         duration: 500,
+         easing: "swing"
+      });
+      return false;
+   });
+
 });
+
+function popupsHide() {
+	$('.background__popup-overflow').fadeOut(250);
+	$('.popup__item').fadeOut(500);
+}
+
+function popupShow(block) {
+	var popup = $('#'+ block +'');
+	$('.background__popup-overflow').fadeIn(250);
+	popup.fadeIn(500);
+}

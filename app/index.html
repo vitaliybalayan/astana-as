@@ -5,7 +5,7 @@
 
 	<meta charset="utf-8">
 
-	<title>Астана АС</title>
+	<title>ТОО "АСТАНА-АС" — Производство кирпича</title>
 	<meta name="description" content="">
 
 	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap&subset=cyrillic" rel="stylesheet">
@@ -18,17 +18,18 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 	<meta property="og:image" content="path/to/image.jpg">
-	<link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
-	<link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png">
-	<link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-touch-icon-72x72.png">
-	<link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-touch-icon-114x114.png">
+
+	<link rel="shortcut icon" href="img/favicons/favicon-32x32.png" type="image/png">
+	<link rel="apple-touch-icon" href="img/favicons/apple-touch-icon-64x64.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="img/favicons/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="img/favicons/apple-touch-icon-114x114.png">
 
 	<!-- Chrome, Firefox OS and Opera -->
-	<meta name="theme-color" content="#000">
+	<meta name="theme-color" content="#F7B81D">
 	<!-- Windows Phone -->
-	<meta name="msapplication-navbutton-color" content="#000">
+	<meta name="msapplication-navbutton-color" content="#F7B81D">
 	<!-- iOS Safari -->
-	<meta name="apple-mobile-web-app-status-bar-style" content="#000">
+	<meta name="apple-mobile-web-app-status-bar-style" content="#F7B81D">
 
 	<link rel="stylesheet" href="css/main.min.css">
 
@@ -36,7 +37,7 @@
 
 <body>
 
-	<header class="main_header fixed_header">
+	<header class="main_header" id="main__header">
 		<div class="container">
 			
 			<div class="row">
@@ -47,15 +48,15 @@
 				</div>
 				<div class="col-md-auto">
 					<nav class="main_menu">
-						<a href="#" class="main_menu__item">О нас</a>
-						<a href="#" class="main_menu__item">Преимущества</a>
-						<a href="#" class="main_menu__item">Сертификаты</a>
-						<a href="#" class="main_menu__item">Калькулятор цены</a>
-						<a href="#" class="main_menu__item">Контакты</a>
+						<a href="#catalog" class="main_menu__item">Каталог товаров</a>
+						<a href="#advantage" class="main_menu__item">Преимущества</a>
+						<a href="#about" class="main_menu__item">О нас</a>
+						<a href="#calc_brick" class="main_menu__item">Калькулятор кирпича</a>
+						<a href="#contacts" class="main_menu__item">Контакты</a>
 					</nav>
 				</div>
 				<div class="col" data-text_align="right">
-					<a href="#" class="header__button-full">Оставить заявку</a>
+					<a href="javascript:void(0)" onclick="popupShow('popup__callback');" class="header__button-full">Оставить заявку</a>
 				</div>
 			</div>
 
@@ -64,17 +65,6 @@
 
 	<section class="main_slider-container">
 		<div class="main__slider">
-			<a href="#" class="slide__container slide-link">
-				<div class="slide__item" style="background: #F7B81D; background-size: cover;">
-					<div class="slide__content">
-						<div class="slide__title">Фундаментальное качество</div>
-						<div class="slide__desc">Завод по производству керамических блоков и кирпичей в Казахстане</div>
-						<div class="slide__link">
-							<span onclick="location.href = '#'" class="slide__link-block">Подробнее</span>
-						</div>
-					</div>
-				</div>
-			</a>
 			<a href="#" class="slide__container slide-link">
 				<div class="slide__item" style="background: #F7B81D; background-size: cover;">
 					<div class="slide__content">
@@ -126,7 +116,7 @@
 									<div class="calc-form__footer-price"><span id="total_price_with_brick">{{result}}</span> тг.</div>
 								</div>
 								<div class="col">
-									<button class="default__button yellow">Заказать</button>
+									<button type="submit" class="default__button yellow">Заказать</button>
 								</div>
 							</div>
 						</div>
@@ -138,7 +128,7 @@
 		</div>
 	</section>
 
-	<section class="default__section catalog__products" id="#catalog">
+	<section class="default__section catalog__products" id="catalog">
 		<div class="container">
 			<div class="row">
 				<div class="col">
@@ -146,21 +136,21 @@
 						<h2 class="default__title">Каталог товаров</h2>
 						<p>Astana-As является производителем керамического кирпича для облицовки и строительства зданий и сооружений. Наша продукция изготовлена с использованием современных технологий и отвечает международным стандартам качества</p>
 						<div class="catalog__products-desc_link">
-							<a href="#" class="default__button yellow">Оставить заявку</a>
+							<a href="javascript:void(0)" onclick="popupShow('popup__callback');" class="default__button yellow">Оставить заявку</a>
 						</div>
 					</div>
 				</div>
 				<div class="col">
 					<div class="row">
 						<div class="col">
-							<a href="#" class="default__block catalog__item-block">
-								<img src="/img/example_1.jpg" alt="Кирпич 1">
-								<span>Кирпич обычный</span>
+							<a href="javascript:void(0)" onclick="popupShow('popup__callback');" class="default__block catalog__item-block">
+								<img src="/img/product/2.jpg" alt="Полуторный кирпич">
+								<span>Полуторный кирпич</span>
 							</a>
 						</div>
 						<div class="col">
-							<a href="#" class="default__block catalog__item-block">
-								<img src="/img/example_1.jpg" alt="Кирпич 1">
+							<a href="javascript:void(0)" onclick="popupShow('popup__callback');" class="default__block catalog__item-block">
+								<img src="/img/product/example_1.jpg" alt="Кирпич необычный">
 								<span>Кирпич необычный</span>
 							</a>
 						</div>
@@ -234,7 +224,7 @@
 		</div>
 	</section>
 
-	<section class="calc_brick">
+	<section class="calc_brick" id="calc_brick">
 		<div class="container">
 			<div class="yellow__section">
 				
@@ -244,12 +234,10 @@
 					<label class="title__label">Выберите вид</label>
 					<div class="row">
 						<div class="col">
-							<label for="house_building" class="checkbox__label"></label>
 							<input type="checkbox" class="default__checkbox" id="house_building" value="Облицовка дома (в ½ кирпича)">
 							<label for="house_building" class="input__label">Облицовка дома (в ½ кирпича)</label>
 						</div>
 						<div class="col">
-							<label for="brick_building" class="checkbox__label"></label>
 							<input type="checkbox" class="default__checkbox" id="brick_building" value="Облицовка дома (в ½ кирпича)">
 							<label for="brick_building" class="input__label">Строительство (в 2,5 кирпича: в 2 кирпича — забутовка и в ½ кирпича — облицовка)</label>
 						</div>
@@ -290,11 +278,18 @@
 					</div>
 				</div>
 
+				<div class="calc_brick-form_item-block">
+					<div class="c_b-f_i-block__buttons">
+						<a href="#" class="default__button black">Рассчитать</a>
+						<a href="#" class="default__button ghost-black">Узнать стоимость</a>
+					</div>
+				</div>
+
 			</div>
 		</div>
 	</section>
 
-	<section class="section__contacts">
+	<section class="section__contacts" id="contacts">
 		
 		<div class="container">
 			
@@ -411,6 +406,56 @@
 		</div>
 
 	</footer>
+
+	<div class="callback__popup">
+		
+		<a href="javascript:void(0)" onclick="popupsHide()" class="background__popup-overflow" style="display: none;"></a>
+
+		<div class="popup__block">
+							
+			<div class="popup__item" id="popup__callback" style="display: none;">
+				
+				<div class="popup__item-title">
+					<h3>Оставить заявку</h3>
+					<div class="popup__close-button">
+						<a href="javascript:void(0)" onclick="popupsHide()" class="close__button" data-icon_size="middle"></a>
+					</div>
+				</div>
+
+				<div class="popup__item-content">
+					
+					<form action="mail.php" method="POST" class="callback__form">
+						
+						<div class="callback__select-buttons inline-middle">
+							<input type="radio" class="default__radio" name="callback__type" value="WhatsApp" id="wathsapp__radio" checked>
+							<label for="wathsapp__radio" class="callback__button callback__i-whatsapp"></label>
+							<input type="radio" class="default__radio" name="callback__type" value="Telegram" id="telegram__radio">
+							<label for="telegram__radio" class="callback__button callback__i-telegram"></label>
+							<input type="radio" class="default__radio" name="callback__type" value="Email" id="email__radio">
+							<label for="email__radio" class="callback__button callback__i-email"></label>
+						</div>
+
+						<div class="callback__inputs-block">
+							<input type="text" name="value" class="default__input" placeholder="Введиие данные">
+						</div>
+
+						<div class="callback__inputs-block">
+							<button type="submit" class="default__button yellow" data-width="full">Отправить</button>
+						</div>
+
+						<div class="callback__form-footer">
+							<span class="notify">Отправляя данную форму, вы подтверждаете свое согласие на обработку персональных данных</span>
+						</div>
+
+					</form>
+
+				</div>
+
+			</div>
+			
+		</div>
+
+	</div>
 
 	<script src="js/scripts.min.js"></script>
 

@@ -63,6 +63,9 @@ a
 		// border-bottom: 1px dashed $yellow
 
 .main_header
+	position: absolute
+	right: 0
+	left: 0
 	padding: 25px 0
 	font-size: 14px
 	a
@@ -70,8 +73,19 @@ a
 		color: black
 		line-height: 100%
 
+.fixed_header
+	position: fixed
+	top: 0
+	z-index: 99999
+	background: white
+	border-bottom: 1px solid rgba(0, 0, 0, 0.05)
+	padding-bottom: 15px
+
 .main_menu
 	padding-left: 20px
+
+.main_slider-container
+	margin-top: 96px
 
 .main_menu__item
 	padding: 12px 0
@@ -217,6 +231,8 @@ p
 			background: transparent
 			top: 10px
 			transition: 0.2s ease-in-out
+	img
+		max-height: 150px
 
 .catalog__products-desc_link
 	margin-top: 25px
@@ -237,6 +253,19 @@ p
 		&:hover
 			border: 1px solid $yellow
 			background: transparent
+	&.black
+		background: #262626
+		color: white
+		border: 1px solid #262626
+		&:hover
+			color: #262626
+			background: unset
+	&.ghost-black
+		color: #262626
+		&:hover
+			background: #262626
+			color: white
+			border: 1px solid #262626
 
 .inline-bottom > *
 	display: inline-block
@@ -534,6 +563,10 @@ h3
 
 .calc_brick
 	margin: 70px 0
+	.yellow__section
+		transition: $transition
+		&:hover
+			transform: scale(1.05)
 
 .section__footer
 	background: #262626
@@ -643,5 +676,125 @@ h3
 		background-image: url(/img/icons/tick_black.svg)
 		background-repeat: no-repeat
 		background-position: 50%
+
+.c_b-f_i-block__buttons a
+	margin-right: 30px
+
+.background__popup-overflow
+	display: block
+	position: fixed
+	top: 0
+	left: 0
+	bottom: 0
+	right: 0
+	background: rgba(247, 184, 29, 0.5)
+	z-index: 99999
+
+.popup__block
+	position: fixed
+	top: 50%
+	left: 50%
+	right: 0
+	transform: translate(-50%, -50%)
+	z-index: 99999
+	width: 540px
+
+.popup__item
+	position: relative
+	background: #FFFFFF
+	box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.05)
+	border-radius: 10px
+	padding: 35px
+	font-size: 14px
+
+.callback__button
+	position: relative
+	padding: 11px
+	width: 150px
+	border-radius: 50px
+	height: 40px
+	margin-right: 4px
+	border: 1px solid #F7B81D
+	margin-bottom: 0
+	cursor: pointer
+
+.default__radio
+	display: none
+
+.callback__button:last-child
+	margin-right: 0
+
+.popup__item-title
+	margin-bottom: 20px
+
+.popup__close-button
+	position: absolute
+	line-height: 100%
+	right: 35px
+	top: 41px
+
+.close__button
+	display: inline-block
+	background: url('/img/icons/close_icon.svg') 50% no-repeat
+
+[data-icon_size="middle"]
+	width: 16px
+	height: 16px
+	background-size: 100%
+
+.popup__close-button a
+	opacity: 0.1
+	&:hover
+		opacity: 0.25
+
+.callback__i-whatsapp:before
+	background: url('/img/icons/whatsapp_black.svg') 50% no-repeat
+
+[class*=callback__i-]:before
+	content: ''
+	position: absolute
+	display: inline-block
+	width: 18px
+	height: 18px
+	left: 50%
+	top: 50%
+	transform: translate(-50%, -50%)
+
+.default__radio[type='radio']:checked + label
+	background: $yellow
+	transition: $transition
+
+.callback__button:hover
+	background: rgba($yellow, 0.05)
+
+.callback__i-telegram:before
+	background: url('/img/icons/telegram_black.svg') 50% no-repeat
+
+.callback__i-email:before
+	background: url('/img/icons/email_black.svg') 50% no-repeat
+
+.callback__select-buttons
+	margin-bottom: 10px
+
+.callback__inputs-block
+	margin-bottom: 10px
+	&:last-child
+		margin-bottom: 0
+
+[data-width="full"]
+	width: 100%
+
+span.notify
+	display: block
+	background: url('/img/icons/circle.svg') no-repeat
+	background-size: 14px
+	background-position: 0 50%
+	font-size: 12px
+	line-height: 140%
+	padding-left: 25px
+	opacity: 0.5
+
+.callback__form-footer
+	margin-top: 20px
 
 @import "media" // Всегда в конце
