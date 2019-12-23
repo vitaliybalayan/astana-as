@@ -43,6 +43,7 @@ gulp.task('js', ['common-js'], function() {
 		'app/libs/slick/slick.min.js',
 		'app/libs/slide-and-swipe-menu-master/jquery.touchSwipe.min.js',
 		'app/libs/slide-and-swipe-menu-master/jquery.slideandswipe.min.js',
+		'app/libs/Magnific-Popup-master/jquery.magnific-popup.min.js',
 		'app/js/common.min.js', // Всегда в конце
 		])
 	.pipe(concat('scripts.min.js'))
