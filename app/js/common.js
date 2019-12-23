@@ -174,4 +174,21 @@ function popupShow(block) {
 
 $(document).ready(function() {
 	$('.mobile_nav').slideAndSwipe();
+
+	//E-mail Ajax Send
+	$(".callback__form").submit(function() { //Change
+		var th = $(this);
+		$.ajax({
+			type: "POST",
+			url: "mail.php", //Change
+			data: th.serialize()
+		}).done(function() {
+			alert("Ваша заявку успешно отправлена!");
+			setTimeout(function() {
+				// Done Functions
+				th.trigger("reset");
+			}, 1000);
+		});
+		return false;
+	});
 });

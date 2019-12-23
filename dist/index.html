@@ -603,18 +603,24 @@
 				<div class="popup__item-content">
 					
 					<form action="mail.php" method="POST" class="callback__form">
+
+						<!-- Hidden Required Fields -->
+						<input type="hidden" name="project_name" value="ТОО АСТАНА-АС">
+						<input type="hidden" name="admin_email" value="vitaliy.balayan@gmail.com">
+						<input type="hidden" name="form_subject" value="Новая заявка с сайта!">
+						<!-- END Hidden Required Fields -->
 						
 						<div class="callback__select-buttons inline-middle">
-							<input type="radio" class="default__radio" name="callback__type" value="WhatsApp" id="wathsapp__radio" checked>
+							<input type="radio" class="default__radio" name="Тип связи" value="WhatsApp" id="wathsapp__radio" checked>
 							<label for="wathsapp__radio" class="callback__button callback__i-whatsapp"></label>
-							<input type="radio" class="default__radio" name="callback__type" value="Telegram" id="telegram__radio">
+							<input type="radio" class="default__radio" name="Тип связи" value="Telegram" id="telegram__radio">
 							<label for="telegram__radio" class="callback__button callback__i-telegram"></label>
-							<input type="radio" class="default__radio" name="callback__type" value="Email" id="email__radio">
+							<input type="radio" class="default__radio" name="Тип связи" value="Email" id="email__radio">
 							<label for="email__radio" class="callback__button callback__i-email"></label>
 						</div>
 
 						<div class="callback__inputs-block">
-							<input type="text" name="value" class="default__input" placeholder="Введите данные">
+							<input type="text" name="Информация" class="default__input" placeholder="Введите данные" required>
 						</div>
 
 						<div class="callback__inputs-block">
