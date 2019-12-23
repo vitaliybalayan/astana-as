@@ -41,6 +41,7 @@ gulp.task('js', ['common-js'], function() {
 		'app/libs/jquery/dist/jquery.min.js',
 		'app/libs/owl/owl.carousel.min.js',
 		'app/libs/slick/slick.min.js',
+		'app/libs/slide-and-swipe-menu-master/jquery.touchSwipe.min.js',
 		'app/libs/slide-and-swipe-menu-master/jquery.slideandswipe.min.js',
 		'app/js/common.min.js', // Всегда в конце
 		])

@@ -37,7 +37,58 @@
 
 <body>
 
-	<header class="main_header" id="main__header">
+	<section class="mobile__menu main_header">
+		
+		<div class="mobile-container">
+			
+			<div class="row">
+				<div class="col">
+
+					<div class="mobile-nav__container inline-middle">
+						<div class="mobile__button">
+							<a href="javascript:void(0)" class="i-menu ssm-toggle-nav"></a>
+						</div>
+
+						<div class="mobile__logotype">
+							<a href="#">
+								<img src="/img/logo.svg" alt="АСТАНА-АС">
+							</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-auto">
+					<div data-text_align="right">
+						<a href="javascript:void(0)" onclick="popupShow('popup__callback');" class="header__button-full mobile__header-button default-devices">Оставить заявку</a>
+						<a href="javascript:void(0)" onclick="popupShow('popup__callback');" class="header__button-full mobile__header-button extra-small">
+							<span class="i-phone"></span>
+						</a>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<div class="mobile__menu-content mobile_nav">
+			<div class="mobile__logotype">
+				<a href="#">
+					<img src="/img/logo.svg" alt="АСТАНА-АС">
+				</a>
+			</div>
+			<div class="mobile__menu-links">
+				<a href="#catalog" class="main_menu__item anchor_link">Каталог товаров</a>
+				<a href="#advantage" class="main_menu__item anchor_link">Преимущества</a>
+				<a href="#about" class="main_menu__item anchor_link">О нас</a>
+				<a href="#calc_brick" class="main_menu__item anchor_link">Калькулятор кирпича</a>
+				<a href="#contacts" class="main_menu__item anchor_link">Контакты</a>
+			</div>
+		</div>
+
+
+	</section>
+	<div class="ssm-overlay ssm-toggle-nav"></div>
+
+	<header class="main_header desktop">
 		<div class="container">
 			
 			<div class="row">
@@ -48,11 +99,11 @@
 				</div>
 				<div class="col-md-auto">
 					<nav class="main_menu">
-						<a href="#catalog" class="main_menu__item">Каталог товаров</a>
-						<a href="#advantage" class="main_menu__item">Преимущества</a>
-						<a href="#about" class="main_menu__item">О нас</a>
-						<a href="#calc_brick" class="main_menu__item">Калькулятор кирпича</a>
-						<a href="#contacts" class="main_menu__item">Контакты</a>
+						<a href="#catalog" class="main_menu__item anchor_link">Каталог товаров</a>
+						<a href="#advantage" class="main_menu__item anchor_link">Преимущества</a>
+						<a href="#about" class="main_menu__item anchor_link">О нас</a>
+						<a href="#calc_brick" class="main_menu__item anchor_link">Калькулятор кирпича</a>
+						<a href="#contacts" class="main_menu__item anchor_link">Контакты</a>
 					</nav>
 				</div>
 				<div class="col" data-text_align="right">
@@ -86,7 +137,7 @@
 					
 					<div class="header_calc-title inline-bottom">
 						<h2 class="header_calc-title-item">Калькулятор цены</h2>
-						<div class="header_calc-sub_title-item"><a href="#">Калькулятор кирпича</a></div>
+						<div class="header_calc-sub_title-item"><a href="#calc_brick" class="anchor_link">Калькулятор кирпича</a></div>
 					</div>
 
 					<div class="header_calc-content">
@@ -116,7 +167,7 @@
 									<div class="calc-form__footer-price"><span id="total_price_with_brick">{{result}}</span> тг.</div>
 								</div>
 								<div class="col">
-									<button type="submit" class="default__button yellow">Заказать</button>
+									<button type="submit" class="default__button yellow" data-width="full">Заказать</button>
 								</div>
 							</div>
 						</div>
@@ -131,7 +182,7 @@
 	<section class="default__section catalog__products" id="catalog">
 		<div class="container">
 			<div class="row">
-				<div class="col">
+				<div class="col-lg">
 					<div class="catalog__products-desc">
 						<h2 class="default__title">Каталог товаров</h2>
 						<p>Astana-As является производителем керамического кирпича для облицовки и строительства зданий и сооружений. Наша продукция изготовлена с использованием современных технологий и отвечает международным стандартам качества</p>
@@ -140,7 +191,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="col">
+				<div class="col-lg">
 					<div class="row">
 						<div class="col">
 							<a href="javascript:void(0)" onclick="popupShow('popup__callback');" class="default__block catalog__item-block">
@@ -165,33 +216,39 @@
 			<h2 class="default__title">Почему клиенты выбирают нас</h2>
 			<div class="row">
 
-				<div class="col">
-					<div class="default__block" data-text_align="center">
+				<div class="col-md">
+					<div class="default__block advan__block">
 						<div class="block__image">
-							<img src="/img/icons/sports-medal_1f3c5.png" alt="Безупречное качество">
+							<img src="/img/icons/quality.png" alt="Безупречное качество">
 						</div>
-						<div class="block__title">Безупречное качество</div>
-						<div class="block__subtitle">Мы отвечаем за каждый кирпич</div>
+						<div class="block__content">
+							<div class="block__title">Безупречное качество</div>
+							<div class="block__subtitle">Мы отвечаем за каждый кирпич</div>	
+						</div>
 					</div>
 				</div>
 
-				<div class="col">
-					<div class="default__block" data-text_align="center">
+				<div class="col-md">
+					<div class="default__block advan__block">
 						<div class="block__image">
-							<img src="/img/icons/1f680.png" alt="Экспресс-доставка по Казахстану">
+							<img src="/img/icons/dostavka.png" alt="Экспресс-доставка по Казахстану">
 						</div>
-						<div class="block__title">Экспресс-доставка по Казахстану</div>
-						<div class="block__subtitle">Мы не заставим вас долго ждать</div>
+						<div class="block__content">
+							<div class="block__title">Экспресс-доставка по Казахстану</div>
+							<div class="block__subtitle">Мы не заставим вас долго ждать</div>	
+						</div>
 					</div>
 				</div>
 
-				<div class="col">
-					<div class="default__block" data-text_align="center">
+				<div class="col-md">
+					<div class="default__block advan__block">
 						<div class="block__image">
-							<img src="/img/icons/bookmark_1f516.png" alt="Доступные цены">
+							<img src="/img/icons/untitled.png" alt="Доступные цены">
 						</div>
-						<div class="block__title">Доступные цены</div>
-						<div class="block__subtitle">Гибкая система скидок</div>
+						<div class="block__content">
+							<div class="block__title">Доступные цены</div>
+							<div class="block__subtitle">Гибкая система скидок</div>
+						</div>
 					</div>
 				</div>
 
@@ -204,7 +261,7 @@
 			
 			<h2 class="default__title">О нас</h2>
 			<div class="row">
-				<div class="col">
+				<div class="col-lg">
 					<p>ТОО “Astana-As” был создан в 2012 году. На заводе применяется современная микропроцессорная техника и компьютеризированная система. Весь процесс автоматизирован. Более 7 лет на рынке Казахстана мы производим кирпич цвета “коричневый”, “абрикос” и “соломенный”. Наши технологические характеристики соответствуют международным стандартам:</p>
 					<ul class="default__list">
 						<li>Высокая морозостойкость (более 50-ти циклов)</li>
@@ -214,7 +271,7 @@
 					</ul>
 					<p>Стены, построенные из нашего кирпича обеспечивают отличный микроклимат в доме. Зимой в домах от ТОО “Астана-Ас” тепло, а летом, наоборот, прохладно. Плюс ко всему - кирпич от завода ТОО “Астана-Ас” обеспечивают хорошую звукоизоляцию и низкую влажность. Внешний вид нашего кирпича позволяет клиентам не тратить лишние деньги на дополнительную отделку дома. Кирпич от ТОО “Astana-AS” имеет приятный оттенок и точные геометрические формы.</p>
 				</div>
-				<div class="col" data-text_align="right">
+				<div class="col-lg desktop" data-text_align="right">
 					<div class="about__right-img">
 						<img src="/img/backgrounds/54wfd_fumo_cubo 1.png" alt="Кирпичная стена">
 					</div>
@@ -233,11 +290,11 @@
 				<div class="calc_brick-form_item-block">
 					<label class="title__label">Выберите вид</label>
 					<div class="row">
-						<div class="col">
+						<div class="col-md">
 							<input type="checkbox" class="default__checkbox" id="house_building" value="Облицовка дома (в ½ кирпича)">
 							<label for="house_building" class="input__label">Облицовка дома (в ½ кирпича)</label>
 						</div>
-						<div class="col">
+						<div class="col-md">
 							<input type="checkbox" class="default__checkbox" id="brick_building" value="Облицовка дома (в ½ кирпича)">
 							<label for="brick_building" class="input__label">Строительство (в 2,5 кирпича: в 2 кирпича — забутовка и в ½ кирпича — облицовка)</label>
 						</div>
@@ -247,18 +304,18 @@
 				<div class="calc_brick-form_item-block">
 					<label class="title__label">Размеры строение</label>
 					<div class="row">
-						<div class="col">
+						<div class="col-md">
 							<input type="text" id="length-metr" name="length-metr" class="default__input" placeholder="Длина, м">
 						</div>
-						<div class="col">
+						<div class="col-md">
 							<input type="text" id="width-metr" name="width-metr" class="default__input" placeholder="Ширина, м">
 						</div>
 					</div>
 					<div class="row">
-						<div class="col">
+						<div class="col-md">
 							<input type="text" id="height-metr" name="height-metr" class="default__input" placeholder="Высота, м">
 						</div>
-						<div class="col">
+						<div class="col-md">
 							<input type="text" id="more-metr" name="more-metr" class="default__input" placeholder="Двери и оконные проемы, м">
 						</div>
 					</div>
@@ -267,11 +324,11 @@
 				<div class="calc_brick-form_item-block">
 					<label class="title__label">Размер кирпича</label>
 					<div class="row">
-						<div class="col">
+						<div class="col-md">
 							<input type="checkbox" class="default__checkbox" id="one-brick">
 							<label for="one-brick" class="input__label">Одинарный кирпич</label>
 						</div>
-						<div class="col">
+						<div class="col-md">
 							<input type="checkbox" class="default__checkbox" id="half-brick">
 							<label for="half-brick" class="input__label">Утолщенный кирпич</label>
 						</div>
@@ -295,7 +352,7 @@
 			
 			<h2 class="default__title">Наши контакты</h2>
 			<div class="row">
-				<div class="col">
+				<div class="col-md">
 					<h3>ТОО “АСТАНА-АС”</h3>
 					<div class="h-subtitle">Обрабатывающая промышленность</div>
 
@@ -323,7 +380,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="col">
+				<div class="col-md requisites-container">
 					<h3>Реквизиты</h3>
 					<div class="margin-top_30px custom__table">
 						<div class="row">
@@ -379,11 +436,11 @@
 			
 			<div class="footer__header">
 				<div class="row">
-					<div class="col inline-middle">
+					<div class="col-lg inline-middle">
 						<a href="#"><img src="/img/logo_white.svg" alt="Astana-As"></a>
 						<div class="copyrite">© Все права защищены</div>
 					</div>
-					<div class="col" data-text_align="right">
+					<div class="col-lg footer__contacts-container" data-text_align="right">
 						<div class="footer__contacts inline-middle">
 							<div class="footer__contacts-phone inline-middle">
 								<a href="tel:+77752253344">+7 (775) 225-33-44</a>

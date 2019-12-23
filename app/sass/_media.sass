@@ -29,16 +29,110 @@
 
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 992px)
-	/**/
+	.desktop
+		display: none
+	.header__button-full
+		padding: 10px 45px
+	.main_header
+		padding-top: 20px
+	.calc__price
+		padding-top: 30px
+	.header__calc-block
+		position: unset
+		max-width: 100%
+		&:before
+			width: calc(100% - 50px)
+			left: 25px
+		&:after
+			width: calc(100% - 80px)
+			left: 40px
+	.catalog__products-desc
+		margin-bottom: 25px
+	.about__right-img
+		img
+			height: 300px
+	.yellow__section
+		padding: 40px 50px
+	.footer__contacts-container
+		text-align: left
+		padding: 15px 0 0
+	.footer__contacts-phone
+		padding: 0
+
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px)
-	/**/
-
+	.mobile-container
+		padding: 0 25px
+	.header__button-full
+		padding: 10px 25px
+	.mobile__logotype
+		img
+			height: 30px
+	.mobile-nav__container
+		padding: 3px 0
+	.main_header
+		padding-top: 15px
+	.fixed_header
+		padding-bottom: 10px
+	.main_slider-container
+		margin-top: 70px
+	.catalog__item-block img
+		margin-right: 20px
+	.default__block
+		margin: 10px 0
+	.requisites-container
+		margin-top: 25px
+	.slide__content
+		left: 40px
+		max-width: 305px
+	.header_calc-sub_title-item
+		margin: 15px 0 0
+		a
+			display: block
+	.popup__block
+		width: 100%
+	.popup__item
+		margin: 0 20px
+	.callback__button
+		margin-bottom: 10px
+		&:last-child
+			margin-bottom: 0
+			width: 100%
+	.extra-small
+		display: none!important
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px)
-	/**/
+	.extra-small
+		display: inline-block!important
+	.default-devices
+		display: none!important
+	.callback__button
+		width: 100%
+	.mobile__header-button.extra-small
+		padding: 8px 45px
+	.mobile-nav__container
+		padding: 5px 0
+	.yellow__section
+		padding: 40px
+	.default__button
+		padding: 12px 50px
+	.slide__title
+		font-size: 26px
+		line-height: 31px
+	.advan__block
+		text-align: left
+		> *
+			display: inline-block
+			vertical-align: middle
+		.block__image
+			margin: 0 20px 0 0
+			img
+				height: 65px
+		.block__content
+			width: calc(100% - 100px)
+
 
 
 /* Custom, iPhone Retina */
@@ -65,10 +159,9 @@
 
 /* Medium Devices, Desktops */
 @media only screen and (min-width : 992px)
-	/**/
+	.mobile__menu
+		display: none
 
 /* Large Devices, Wide Screens */
 @media only screen and (min-width : 1200px)
-	.slide__item
-		// margin: 0px 40px
-
+	/**/

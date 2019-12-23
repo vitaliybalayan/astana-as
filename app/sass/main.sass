@@ -358,17 +358,26 @@ p
 	border: 1px solid #E5E5E5 
 	padding: 15px 25px
 	border-radius: 4px
-	// &:before
-	// 	content: ''
-	// 	display: block
-	// 	position: absolute
-	// 	background: white
-	// 	width: 10px
-	// 	height: 100%
-	// 	right: 0
+	appearance: none
+	&:before
+		content: ''
+		display: block
+		position: absolute
+		background: black
+		width: 10px
+		height: 100%
+		right: 0
 	&:focus, &:hover
 		border: 1px solid $yellow 
 		transition: $transition
+
+.block__image
+	img
+		height: 100px
+		max-width: 100px
+
+.advan__block
+	text-align: center
 
 .default__input
 	width: 100%
@@ -376,6 +385,7 @@ p
 	border-radius: 4px
 	padding: 15px 25px
 	transition: $transition
+	appearance: none
 	&:hover
 		border: 1px solid $yellow
 
@@ -456,7 +466,7 @@ p
 	opacity: 0.01
 
 section.about
-	overflow-x: hidden
+	overflow: hidden
 
 @keyframes float
 	0%
@@ -799,5 +809,65 @@ span.notify
 
 .callback__form-footer
 	margin-top: 20px
+
+.mobile__button
+	margin-right: 20px
+	line-height: 100%
+	.i-menu
+		display: inline-block
+		width: 19px
+		height: 14px
+		background: url('/img/icons/menu.svg') 50% no-repeat
+		background-size: 100%
+
+.mobile__logotype
+	img
+		height: 40px
+
+.mobile-container
+	padding: 0 50px
+
+
+// Mobile menu
+
+.mobile_nav
+	height: 100%
+	width: 280px
+	background-color: white
+	left: 0
+	top: 0
+	z-index: 2
+	position: fixed
+	overflow-y: auto
+	overflow-x: visible
+	transform: translate(-280px, 0)
+	a.main_menu__item
+		display: block
+		padding: 20px 30px
+		margin-right: 0
+
+.ssm-overlay
+	position: fixed
+	top: 0
+	right: 0
+	bottom: 0
+	left: 0
+	background-color: rgba(0, 0, 0, 0.2)
+	display: none
+	z-index: 1
+
+.is-navOpen
+	overflow: hidden
+
+.mobile__menu-content
+	.mobile__logotype
+		padding: 30px 30px 10px
+
+.i-phone
+	display: inline-block
+	width: 16px
+	height: 16px
+	background: url('/img/icons/call-answer.svg') 50% no-repeat
+	background-size: 100%
 
 @import "media" // Всегда в конце
