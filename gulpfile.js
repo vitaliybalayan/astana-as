@@ -39,6 +39,10 @@ gulp.task('common-js', function() {
 gulp.task('js', ['common-js'], function() {
 	return gulp.src([
 		'app/libs/jquery/dist/jquery.min.js',
+		'app/libs/jquery-ui.js',
+		'app/libs/bootstrap.min.js',
+		'app/libs/jquery.dataTables.min.js',
+		'app/libs/dataTables.bootstrap4.min.js',
 		'app/libs/owl/owl.carousel.min.js',
 		'app/libs/slick/slick.min.js',
 		'app/libs/slide-and-swipe-menu-master/jquery.touchSwipe.min.js',

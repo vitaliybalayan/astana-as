@@ -11,6 +11,8 @@
 	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap&subset=cyrillic" rel="stylesheet">
 
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" crossorigin="anonymous">
 
 	<!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
 	<script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
@@ -300,11 +302,11 @@
 					<label class="title__label">Выберите вид</label>
 					<div class="row">
 						<div class="col-md">
-							<input type="checkbox" class="default__checkbox" id="house_building" value="Облицовка дома (в ½ кирпича)">
+							<input type="radio" name="calc_type_building" class="default__checkbox calc_building" id="house_building" value="Облицовка дома (в ½ кирпича)">
 							<label for="house_building" class="input__label">Облицовка дома (в ½ кирпича)</label>
 						</div>
 						<div class="col-md">
-							<input type="checkbox" class="default__checkbox" id="brick_building" value="Облицовка дома (в ½ кирпича)">
+							<input type="radio" name="calc_type_building" class="default__checkbox calc_building" id="brick_building" value="Облицовка дома (в ½ кирпича)">
 							<label for="brick_building" class="input__label">Строительство (в 2,5 кирпича: в 2 кирпича — забутовка и в ½ кирпича — облицовка)</label>
 						</div>
 					</div>
@@ -325,7 +327,7 @@
 							<input type="text" id="height-metr" name="height-metr" class="default__input" placeholder="Высота, м">
 						</div>
 						<div class="col-md">
-							<input type="text" id="more-metr" name="more-metr" class="default__input" placeholder="Двери и оконные проемы, м">
+							<input type="text" id="more-metr" name="more-metr" class="default__input" placeholder="Площадь Двери и оконные проемы, м" data-toggle="tooltip" data-placement="top" title="(Ширина двери * Длина двери) * Количество Дверей + (Ширина окна * Длина окна) * Количество окон">
 						</div>
 					</div>
 				</div>
@@ -334,26 +336,55 @@
 					<label class="title__label">Размер кирпича</label>
 					<div class="row">
 						<div class="col-md">
-							<input type="checkbox" class="default__checkbox" id="one-brick">
-							<label for="one-brick" class="input__label">Одинарный кирпич</label>
+							<input type="radio" name="calc_type_brick" id="single_brick" class="default__checkbox">
+							<label for="single_brick" class="input__label">Одинарный кирпич</label>
 						</div>
 						<div class="col-md">
-							<input type="checkbox" class="default__checkbox" id="half-brick">
-							<label for="half-brick" class="input__label">Утолщенный кирпич</label>
+							<input type="radio" name="calc_type_brick" id="half_brick" class="default__checkbox">
+							<label for="half_brick" class="input__label">Полуторный кирпич</label>
 						</div>
 					</div>
 				</div>
 
 				<div class="calc_brick-form_item-block">
 					<div class="c_b-f_i-block__buttons">
-						<a href="#" class="default__button black">Рассчитать</a>
-						<a href="#" class="default__button ghost-black">Узнать стоимость</a>
+						<a href="javascript:void(0)" onclick="brickCalc()" class="default__button black">Рассчитать</a>
+						<span class="default__button brick_result" style="display: none;"></span>
+						<!-- <a href="#" class="default__button ghost-black">Узнать стоимость</a> -->
 					</div>
 				</div>
 
 			</div>
 		</div>
 	</section>
+
+<!-- 	<section id="calc_result" style="display: none;">
+		<div class="container">
+			<h2 class="default__title">Результат</h2>
+			<div class="row">
+				<div class="col-md requisites-container">
+					<div class="custom__table">
+						<div class="row">
+							<div class="col-auto">Вид:</div>
+							<div class="col-auto" id="result_type_view"></div>
+						</div>
+						<div class="row">
+							<div class="col-auto">Тип кирпичка:</div>
+							<div class="col-auto" id="result_type_brick"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md requisites-container">
+					<div class="custom__table">
+						<div class="row">
+							<div class="col-auto">Итого кирпичей:</div>
+							<div class="col-auto" id="result_brick"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section> -->
 
 	<section class="section__contacts" id="contacts">
 		
@@ -365,12 +396,12 @@
 					<h3>ТОО “АСТАНА-АС”</h3>
 					<div class="h-subtitle">Обрабатывающая промышленность</div>
 
-					<div class="social__buttons">
+<!-- 					<div class="social__buttons">
 						<a href="#" class="social__button-item item__vk">astana-as</a>
 						<a href="#" class="social__button-item item__inst">astana-as</a>
-					</div>
+					</div> -->
 
-					<div class="custom__table">
+					<!-- <div class="custom__table">
 						<div class="row">
 							<div class="col-auto">Телефон:</div>
 							<div class="col-auto"><a href="tel:+77752253344">+7 (775) 225-33-44</a></div>
@@ -387,28 +418,28 @@
 							<div class="col-auto">Адрес:</div>
 							<div class="col-auto">Акмолинская область, Целиноградский район,<br>А.Кабанбай батыра, ул. нет улицы, д.</div>
 						</div>
-					</div>
+					</div> -->
 				</div>
 				<div class="col-md requisites-container">
-					<h3>Реквизиты</h3>
-					<div class="margin-top_30px custom__table">
-						<div class="row">
+					<!-- <h3>Реквизиты</h3> -->
+					<div class="custom__table">
+<!-- 						<div class="row">
 							<div class="col-auto">Полное название компании:</div>
 							<div class="col-auto">ТОО “АСТАНА-АС”</div>
 						</div>
 						<div class="row">
 							<div class="col-auto">БИН:</div>
 							<div class="col-auto">110640004551</div>
+						</div> -->
+						<div class="row">
+							<div class="col-auto">Телефон:</div>
+							<div class="col-auto"><a href="tel:+77024002224">+7 (702) 400-22-24</a></div>
 						</div>
 						<div class="row">
-							<div class="col-auto">РНН:</div>
-							<div class="col-auto">430100280505</div>
+							<div class="col-auto">Телефон:</div>
+							<div class="col-auto"><a href="tel:+77712240316">+7 (771) 224-03-16</a></div>
 						</div>
-						<div class="row">
-							<div class="col-auto">№ Счета:</div>
-							<div class="col-auto">KZ386010231000320133</div>
-						</div>
-						<div class="row">
+<!-- 						<div class="row">
 							<div class="col-auto">Банк:</div>
 							<div class="col-auto">АО "Народный банк Казахстана"</div>
 						</div>
@@ -419,7 +450,7 @@
 						<div class="row">
 							<div class="col-auto">Юр. адрес:</div>
 							<div class="col-auto">Акмолинская область, Целиноградский район,<br>А.Кабанбай батыра, ул. нет улицы, д.</div>
-						</div>
+						</div> -->
 					</div>
 				</div>
 			</div>
@@ -439,7 +470,7 @@
 		</div>
 	</section>
 
-	<section class="sertifate__section" id="sertificate">
+<!-- 	<section class="sertifate__section" id="sertificate">
 		<div class="container">
 			<h2>Наши сертификаты</h2>
 			<div class="gallery__container">
@@ -480,7 +511,7 @@
 
 			</div>
 		</div>
-	</section>
+	</section> -->
 
 	<section class="reviews__section" id="reviews">
 		

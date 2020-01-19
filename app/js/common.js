@@ -192,3 +192,88 @@ $(document).ready(function() {
 		return false;
 	});
 });
+
+function brickCalc() {
+	
+	var house_building = $('#house_building').prop('checked');
+	var brick_building = $('#brick_building').prop('checked');
+
+	if (house_building) {
+		house_building_calc(calcTypeBrick());
+	}
+
+	if (brick_building) {
+		brick_building_calc(calcTypeBrick());
+	}
+}
+
+function calcTypeBrick() {
+	var single_brick = $('#single_brick').prop('checked');
+	var half_brick = $('#half_brick').prop('checked');
+
+	if (single_brick) {
+		var arr = ['64','320'];
+	}
+
+	if (half_brick) {
+		var arr = ['70','350'];
+	}
+
+	return arr;
+}
+
+function calcS() {
+	var p, s_house, s_masonry, total;
+
+	// Ширина дома
+	var width = $('#width-metr').val();
+	
+	// Высота дома
+	var height = $('#height-metr').val();
+	
+	// Длинна дома 
+	var length = $('#length-metr').val();
+
+	// Площадь двери и окна
+	var s_wind_doors = $('#more-metr').val();
+
+	p = (+length + +width) * 2;
+
+	s_house = p * height;
+	console.log('S кладки:', s_house);
+
+	if (s_wind_doors) {
+		s_masonry = s_house - s_wind_doors;
+		console.log('Итого S кладки (с учетом S дверей и окон):', s_masonry);
+	} else {
+		s_masonry = s_house;
+		console.log('Итого S кладки:', s_masonry);
+	}
+
+	return s_masonry;
+}
+
+function house_building_calc(brick_metr) {
+	var total;
+
+	total = calcS() * brick_metr[0];
+
+	showCalcResult(total);
+}
+
+function brick_building_calc(brick_metr) {
+	var total;
+
+	total = calcS() * brick_metr[1];
+
+	showCalcResult(total);
+}
+
+function showCalcResult(result) {
+
+	$('.brick_result').fadeIn();
+	$('.brick_result').text('Итого: '+ result.toLocaleString() +' кирпичей');
+
+
+	console.log('Всего кирпичей:', result);
+}
