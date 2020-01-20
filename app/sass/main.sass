@@ -694,10 +694,12 @@ h3
 		border-radius: 2px
 		margin-right: 10px
 		float: left
+		appearance: none
 	&:checked + label:before
 		background-image: url(/img/icons/tick_black.svg)
 		background-repeat: no-repeat
 		background-position: 50%
+		appearance: none
 
 .c_b-f_i-block__buttons a
 	margin-right: 30px
@@ -840,11 +842,12 @@ span.notify
 // Mobile menu
 
 .mobile_nav
-	height: 100%
+	height: calc(100% - 66px)
 	width: 280px
 	background-color: white
+	border-right: 1px solid rgba(0,0,0,.05)
 	left: 0
-	top: 0
+	bottom: 0
 	z-index: 2
 	position: fixed
 	overflow-y: auto
